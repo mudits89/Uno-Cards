@@ -1,0 +1,24 @@
+<h1><code>UNO CARDs</code></h1>
+
+<h2><code>Add/Remove Player : </code>
+
+  <button type="button" (click)="addPlayer()">Add Player</button> &nbsp;&nbsp;
+  <button type="button" (click)="removePlayer()">Remove Player</button></h2>
+
+<h2>
+  <code>No of Players: {{totPlayer}}</code>
+</h2>
+<h5><code>(Players Limit : Min => 2 , Max => 7)</code></h5>
+<button type="button" (click)="Start()">START</button>
+<br>
+
+<table>
+  <tr *ngFor="let p of playerArr; let i=index">
+    <td>Player {{i+1}}: </td>
+    <td *ngFor="let i of p.cards">
+      <tr>
+        <img [src]="i.imageUrl" [alt]="i.name" />
+      </tr>
+    </td>
+  </tr>
+</table>
